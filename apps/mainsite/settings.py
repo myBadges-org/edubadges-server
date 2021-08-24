@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'staff',
 
     # api docs
-    # 'apispec_drf',
+    'apispec_drf',
 
     # deprecated
     'composition',
@@ -331,7 +331,7 @@ LOGGING = {
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': 'localhost:11211',
+        'LOCATION': os.environ['MEMCACHED_HOST'] + ':11211',
     }
 }
 
@@ -515,10 +515,13 @@ DATABASES = {
         'NAME': os.environ['BADGR_DB_NAME'],
         'USER': os.environ['BADGR_DB_USER'],
         'PASSWORD': os.environ['BADGR_DB_PASSWORD'],
-        'HOST': '',
+        'HOST': os.environ['BADGR_DB_HOST'],
         'PORT': '',
         'TEST': {
             'CHARSET': 'utf8',
+        },
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
     }
 }

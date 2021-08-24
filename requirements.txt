@@ -47,8 +47,8 @@ rules==0.4
 django-oauth-toolkit==1.1.2
 
 # Some extras
-django-cors-headers==1.1.0
-django-cors-middleware==1.4.0
+django-cors-headers==3.8.0
+# django-cors-middleware==1.5.0
 django-autoslug==1.9.6
 
 # wsgiref==0.1.2 # python3 incompatible
@@ -99,6 +99,9 @@ tinycss==0.4
 
 # Backport of Python 3.0 CSV package with Unicode support
 backports.csv==1.0.4
+
+apispec==0.22.0
+apispec-djangorestframework==1.1.1
 
 # EncryptedCursorPagination dependencies
 more-itertools==2.5.0
